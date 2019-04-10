@@ -10,7 +10,7 @@
 # Commands:
 #   hubot list|show sandboxes - List the sandboxes and their availability
 #   hubot assign sandbox <name> to <user> - Assign a sandbox to a user
-#   hubot I'm using sandbox <name> - Assign a sandbox to yourself
+#   hubot I am using sandbox <name> - Assign a sandbox to yourself
 #   hubot release sandbox <name> - Free a sandbox for use by someone else
 #   hubot add sandbox <name> - Add a new sandbox
 #   hubot delete|remote sandbox <name> - Delete a sandbox
@@ -59,7 +59,7 @@ module.exports = (robot) ->
     assignSandbox user_id, sandbox_name, msg
 
 
-  robot.respond /I'm using s(?:andbox)? ([A-Za-z0-9-_]+)/i, (msg) ->
+  robot.respond /I am using s(?:andbox)? ([A-Za-z0-9-_]+)/i, (msg) ->
     sandbox_name = msg.match[1].toString()
     assignSandbox msg.message.user.id, sandbox_name, msg
 
